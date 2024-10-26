@@ -1,3 +1,5 @@
+import { resolveAlias } from "nuxt/kit";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
@@ -20,6 +22,10 @@ export default defineNuxtConfig({
     },
   },
 
+  image: {
+    domains: ["https://cdn.dummyjson.com"],
+  },
+
   unhead: {
     renderSSRHeadOptions: {
       omitLineBreaks: false,
@@ -36,5 +42,8 @@ export default defineNuxtConfig({
     families: {
       Montserrat: true,
     },
+  },
+  alias: {
+    "~": "./..", // The root of the project.
   },
 });
